@@ -26,6 +26,10 @@ public class MainActivity extends Activity {
         setContentView(recyclerView);
     }
 
+    public void ClickImage() {
+        finish();
+    }
+
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putInt(RecAdapterPosition, ((LinearLayoutManager)recyclerView.getLayoutManager()).findFirstCompletelyVisibleItemPosition());

@@ -2,7 +2,6 @@ package com.example.labwork1;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -28,7 +27,7 @@ public class RecycleViewCustomAdapter extends RecyclerView.Adapter<ItemViewCusto
         } else {
             holder.itemView.setBackgroundColor(Color.GRAY);
         }
-        holder.setItemText(NumberToWriting.digitsToText(position + 1));
+        holder.setItemText(NumberToWriting.digitsToText(1000000 - position));
     }
 
     @Override

@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class NumberToWriting {
 
-    private static enum Ranges {UNITS, DECADES, HUNDREDS, THOUSANDS, MILLIONS, BILLIONS};
+    private enum Ranges {UNITS, DECADES, HUNDREDS, THOUSANDS, MILLIONS, BILLIONS};
 
     private static Stack <ThreeChar> threeChars;
 
@@ -52,8 +52,11 @@ public class NumberToWriting {
             }
         }
         StringBuilder result = new StringBuilder();
-        while(!threeChars.isEmpty()){
+        while(!threeChars.isEmpty()) {
             ThreeChar temp = threeChars.pop();
+            if(temp.h == '0' && temp.d == '0' && temp.u == '0') {
+                continue;
+            }
             if(temp.h > '0') {
                 result.append(getHundreds(temp.h));
                 result.append(' ');
